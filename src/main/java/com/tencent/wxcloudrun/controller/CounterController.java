@@ -1,5 +1,6 @@
 package com.tencent.wxcloudrun.controller;
 
+import com.tencent.wxcloudrun.dao.CountersMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.tencent.wxcloudrun.config.ApiResponse;
@@ -26,6 +27,9 @@ public class CounterController {
   final CounterService counterService;
   final Logger logger;
 
+  @Autowired
+  CountersMapper countersMapper;
+
   public CounterController(@Autowired CounterService counterService) {
     this.counterService = counterService;
     this.logger = LoggerFactory.getLogger(CounterController.class);
@@ -37,15 +41,17 @@ public class CounterController {
    * @return API response json
    */
   @GetMapping(value = "/api/count")
-  ApiResponse get() {
-    logger.info("/api/count get request");
+ /* ApiResponse get() {*/
+          List<Counter> get(){
+    /*logger.info("/api/count get request");
     Optional<Counter> counter = counterService.getCounter(1);
     Integer count = 0;
     if (counter.isPresent()) {
       count = counter.get().getCount();
-    }
-
-    return ApiResponse.ok(count);
+    }*/
+    List<Counter> count=countersMapper.selectList(null);
+//    return ApiResponse.ok(count);
+    return count;
   }
 
 

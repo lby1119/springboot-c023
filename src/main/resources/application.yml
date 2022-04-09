@@ -12,6 +12,31 @@ spring:
     view:
       suffix: .html
       prefix: /
+#
+#mybatis:
+#  mapper-locations: classpath*:mapper/*Mapper.xml
 
-mybatis:
-  mapper-locations: classpath*:mapper/*Mapper.xml
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf8
+#    username: lby_1
+#    password: 123456
+#  mvc:
+#      view:
+#        suffix: .html
+#        prefix: /
+
+##spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/springboot
+#    username: lby_1
+#    password: 123456
+##    mvc:
+##  view:
+##    suffix: .html
+##    prefix: /
+#
+##mybatis:
+##    mapper-locations: classpath*:mapper/*Mapper.xml

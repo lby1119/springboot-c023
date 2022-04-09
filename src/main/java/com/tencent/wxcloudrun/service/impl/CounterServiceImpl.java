@@ -1,5 +1,6 @@
 package com.tencent.wxcloudrun.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tencent.wxcloudrun.dao.CountersMapper;
 import com.tencent.wxcloudrun.model.Counter;
 import com.tencent.wxcloudrun.service.CounterService;
@@ -10,9 +11,10 @@ import java.util.Optional;
 import java.util.List;
 
 @Service
-public class CounterServiceImpl implements CounterService {
+public class CounterServiceImpl  extends ServiceImpl<CountersMapper, Counter> implements CounterService {
 
   final CountersMapper countersMapper;
+
 
   public CounterServiceImpl(@Autowired CountersMapper countersMapper) {
     this.countersMapper = countersMapper;
